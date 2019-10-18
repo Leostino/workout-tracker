@@ -2,7 +2,15 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout_db", { useNewUrlParser: true });
+var databaseUri = "mongodb://localhost/workout_db";
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI)
+}else {
+  mongoose.connect(databaseUri)
+}
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout_db", { useNewUrlParser: true });
 
 const Schema = mongoose.Schema;
 
@@ -13,19 +21,9 @@ const WorkoutSchema = new Schema({
   workout: String,
   distance: Number,
   duration: Number,   
-   
-},{
-
-  workout: String,
-  distance: Number, 
-  duration: Number,
-
-},{
-
-  workout: String,
   laps: Number,
-  weight: Number,
-  duration: Number
+  weight: Number
+
 
 });
 
@@ -40,31 +38,45 @@ module.exports = Workout;
 
 
 
-// const mongoose = require('mongoose');
+// let table = $("#view-workout");
 
-// const Schema = mongoose.Schema;
+//         let thead = $("<thead>");
 
-// const WorkoutSchema = new Schema({
+//         table.append(thead);
 
-//   run_workout: String,
-//   run_distance: Number,
-//   run_duration: Number,    
-  
+//         let tbody = $("<tbody>");
 
-//   bik_workout: String,
-//   bik_distance: Number, 
-//   bik_duration: Number,
-  
+//         table.append(tbody);
 
-//   bench_workout: String,
-//   bench_laps: Number,
-//   bench_weight: Number,
-//   bench_duration: Number
+//         //console.log(data);
 
-// });
+//         for(let i = 0; i < data.length; i++) {
 
+//             // console.log(data[i])
 
-// const Workout = mongoose.model('Workout', WorkoutSchema);
+//             div.html("likes");
 
+//             if (i === 0) {
+//                 var headRow = $("<tr>");
+//               thead.append(headRow);
 
-// module.exports = Workout;
+//         }
+
+//         let tr = $("<tr>");
+//         tbody.append(tr);
+
+//         for (let key in data[i]) {
+//             if (i === 0) {
+//               let th = $("<th>");
+//               th.innerText = key;
+//               headRow.append(th);
+        
+//             }
+
+//             let td = $("<td>");
+//         td.innerText = data[i][key];
+//         tr.append(td);
+//       }
+//     }
+        
+//})

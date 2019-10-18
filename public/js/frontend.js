@@ -6,8 +6,6 @@ $(document).ready(() => {
     
     $("#add-workout").hide()
     
-    $("#view-workout").hide()
-
     $("#view-button").hide();
 
 })
@@ -61,7 +59,6 @@ $("#view-button").on("click",() => {
 
     $("#view-button").hide();
 
-    $("#view-workout").show();
 
 
     // ajax call to get all workouts from database
@@ -76,21 +73,35 @@ $("#view-button").on("click",() => {
 
         // loop throught call back and append to the section element
 
-        let section = $("$view-workout");
+        let section = $("#view-workout");
 
-        let div = $("<div>");
+        let thead = $("<thead>");
 
-        console.log(data);
+        console.log(data[23].workout);
+
+        console.log(data[24].workout);
+
+        console.log(data[25].workout);
+
+        section.append(thead);
+
+        let tr = $("<tr>");
+
+        
+
+
+
+        //console.log(data);
 
         for(let i = 0; i < data.length; i++) {
 
-            section.html(data[i]);
+            
 
-            // div.append(data[i]);
+            // div.html("<h1>" +data[i].workout);
 
         }
 
-        
+        section.append(div)
         
       })
 
