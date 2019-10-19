@@ -21,6 +21,10 @@ th {
   padding: 10px;
 }
 
+#view-workout table {
+  margin-left: 30px;
+}
+
 
 /* @media only screen and (max-width: 600px) {
   #usernameDiv 

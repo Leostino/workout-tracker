@@ -6,7 +6,7 @@ var databaseUri = "mongodb://localhost/workout_db";
 
 if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI)
-}else {
+}else{
   mongoose.connect(databaseUri)
 }
 
