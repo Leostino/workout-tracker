@@ -60,7 +60,6 @@ $("#view-button").on("click",() => {
     $("#view-button").hide();
 
 
-
     // ajax call to get all workouts from database
     
     $.ajax("/viewall", {
@@ -69,41 +68,54 @@ $("#view-button").on("click",() => {
 
         dataType: "json"
   
-      }).then(data => {
+      
+    }).then(data => {
 
         // loop throught call back and append to the section element
 
-        let section = $("#view-workout");
+        console.log(data);
 
-        let thead = $("<thead>");
-
-        console.log(data[23].workout);
-
-        console.log(data[24].workout);
-
-        console.log(data[25].workout);
-
-        section.append(thead);
-
-        let tr = $("<tr>");
-
+        const section = $("#view-workout");
+    
+        for (const i of data) {
         
-
-
-
-        //console.log(data);
-
-        for(let i = 0; i < data.length; i++) {
-
+            const tbl = $("<table>");
+        
+            for (const j in i) {
             
-
-            // div.html("<h1>" +data[i].workout);
-
+                const row = $("<tr>");
+            
+                let cell = $("<td>");
+            
+                let cellText = document.createTextNode(j + ": ");
+            
+                cell.append(cellText);
+            
+                row.append(cell);
+            
+            
+                cell = $("<td>");
+            
+                cellText = document.createTextNode(i[j]);
+            
+                cell.append(cellText);
+            
+                row.append(cell);
+            
+                tbl.append(row);
+        
+            }
+       
+            section.append(tbl);
+    
         }
 
-        section.append(div)
         
-      })
+        
+      
+    
+    })    
+    
 
 })
 

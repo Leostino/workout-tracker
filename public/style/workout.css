@@ -11,3 +11,86 @@ body {
 .container{
     background-color: greenyellow
 }
+
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+th {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+
+/* @media only screen and (max-width: 600px) {
+  #usernameDiv 
+  {
+    margin-left:0px;
+    padding-left: 0px;
+    margin-right: 200px;
+              
+  }
+
+  #nameDiv 
+  {
+    margin-left: 0px;
+    padding-left: 0px;
+              
+  }
+
+  #username 
+  {
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 300px;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) {
+  #usernameDiv {
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 300px;
+  }
+
+  #nameDiv 
+  {
+    margin-left: 0px;
+    padding-left: 0px;
+                 
+  }
+
+  #username 
+  {
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 300px;
+  }
+  
+} 
+
+@media only screen and (max-width: 750px) {
+  #usernameDiv 
+  {
+    margin-left:0px;
+    padding-left: 0px;
+    margin-right: 300px;
+              
+  }
+  
+  #nameDiv 
+  {
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 300px;              
+  }
+
+  #username 
+  {
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 300px;
+  }
+
+} */

@@ -84,6 +84,7 @@ app.post("/benchpress", (req,res) => {
 
 app.get("/viewall", (req,res) => {
 
+
     Workout.find({})
     .then(data => {
         console.log(data);
