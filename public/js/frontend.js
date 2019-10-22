@@ -71,11 +71,11 @@ $("#view-button").on("click",() => {
       
     }).then(data => {
 
-        // loop throught call back and append to the section element
-
-        console.log(data);
+        
 
         const section = $("#view-workout");
+
+        // create table element and add data to table dynamically
     
         for (const i of data) {
         
@@ -106,6 +106,8 @@ $("#view-button").on("click",() => {
         
             }
        
+            // append the table to section
+
             section.append(tbl);
     
         }
